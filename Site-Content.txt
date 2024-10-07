@@ -1,0 +1,12 @@
+°HOMEPAGE
+ -NavBar
+   -Home
+   -Register/Login
+   -Menu
+   -Pedir
+   -Carrinho
+   -About
+ -Hero Image
+ -Amostra do Menu
+ - Comentários
+ -Delivery info
