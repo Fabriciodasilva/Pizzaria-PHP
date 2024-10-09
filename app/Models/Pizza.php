@@ -10,6 +10,14 @@ class Pizza extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "name",
+        "ingredients",
+        "price"
+
+    ];
+
+
     public function order(): BelongsToMany
     {
         return $this->belongsToMany(Order::class);
