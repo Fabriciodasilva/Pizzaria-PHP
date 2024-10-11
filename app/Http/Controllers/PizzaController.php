@@ -10,7 +10,18 @@ class PizzaController extends Controller
     public function getpizza(){
         $pizzas = Pizza::all();
         return view("menu", [
-            "pizzas" => $pizzas
+            "pizzas" => $pizzas,
+            "request" => null
+        ]);
+    }
+
+    public function addpizza( Request $request){
+        $pizzas = Pizza::all();
+        return view("menu", [
+            "pizzas" => $pizzas,
+            "request" => $request->input("pizza"),
+            "name" => $request->input("name")
+            
         ]);
     }
 }
