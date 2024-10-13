@@ -1,4 +1,6 @@
 <h1>Menu de Pizzas</h1>
+
+<a href="{{route("payment")}}"><h2>Payment</h2></a>
 @foreach ($pizzas as $pizza)
     <form action="{{route("menu")}}" method="post">
     @csrf
@@ -12,12 +14,15 @@
 @endforeach
 
 
-@if ($request)    
-<h4>
-       {{$request}}
-       {{$name}}
-       
-</h4>
+@if($session)
+      @foreach ($session as $list)
+         @foreach ($list as $pizza)
+             <h3>{{$pizza}}</h3>
+         @endforeach
+     @endforeach
+     
 
 @endif
+ 
+
 
