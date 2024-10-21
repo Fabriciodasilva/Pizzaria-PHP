@@ -18,6 +18,12 @@
         <button type="submit" class="submit">Order</button>
     </form>
 @endforeach
+@if (session()->has('success'))
+     <h3>{{session('success')}}</h3>
+@endif
+@if (session()->has('error'))
+     <h3>{{session('error')}}</h3>
+@endif
 
 @vite('resources/js/order.js')
 </body>
