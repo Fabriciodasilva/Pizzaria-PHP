@@ -15,4 +15,8 @@ class Order extends Model
     {
         return $this->belongsToMany(Pizza::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

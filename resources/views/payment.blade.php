@@ -7,15 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Confirm payment</h1>
-
+<h1>Confirm payment</h1>
     @foreach($orders as $order)
-      @foreach ($order as $array) 
-              @foreach ($array as $item)
-                  <h3>{{$item}}</h3>
-              @endforeach
+      @foreach ($order as $array)             
+                <h3>Name: {{$array["name"]}} </h3>
+                <h3>Price: {{$array["price"]}} </h3>
+                <h3>Qtd: {{$array["qtd"]}}</h3>
+                <h3>Total: {{(float)$array["price"] * (float)$array["qtd"]}} </h3>
+                <br>
       @endforeach
     @endforeach
+    
 </body>
 </html>
 
