@@ -45,7 +45,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function pizza(){
+    public function order(){
         return $this->hasMany(Order::class);
+    }
+
+    public function confirmed_order(){
+        return $this->hasMany(Confirmed_Order::class);
     }
 }

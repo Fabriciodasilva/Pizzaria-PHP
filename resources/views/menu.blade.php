@@ -8,13 +8,14 @@
 <body>
 <h1>Menu de Pizzas</h1>
 
-<a href="{{route("payment")}}"><h2>Payment</h2></a>
+<a href="{{route('payment')}}"><h2>Payment</h2></a>
 @foreach ($pizzas as $pizza)
-    <form action="{{route("menu")}}" method="post">
+    <form method="post" action="{{route('menu')}}">
         @csrf
-        <h3 class="name">{{$pizza->name}}</h3>
-        <h3 class="price">{{$pizza->price}}</h3>
-        <input type="number" name="pizza" class="qtd"  >
+        <input class="id" name="id" type="number" value="{{$id}}" readonly >
+        <input type="text" class="name">{{$pizza->name}}</input>
+        <input type="text" class="price">{{$pizza->price}}</input>
+        <input type="number" class="qtd" name="qtd"   >
         <button type="submit" class="submit">Order</button>
     </form>
 @endforeach
@@ -25,8 +26,8 @@
      <h3>{{session('error')}}</h3>
 @endif
 
-@vite('resources/js/order.js')
 </body>
+
 
 
 

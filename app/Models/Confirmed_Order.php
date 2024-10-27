@@ -7,14 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Order extends Model
+class Confirmed_Order extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        "user_id",
-        "description"
-    ];
 
     public function pizza(): BelongsToMany
     {

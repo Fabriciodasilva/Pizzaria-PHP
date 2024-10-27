@@ -8,15 +8,24 @@
 </head>
 <body>
 <h1>Confirm payment</h1>
-    @foreach($orders as $order)
-      @foreach ($order as $array)             
-                <h3>Name: {{$array["name"]}} </h3>
-                <h3>Price: {{$array["price"]}} </h3>
-                <h3>Qtd: {{$array["qtd"]}}</h3>
-                <h3>Total: {{(float)$array["price"] * (float)$array["qtd"]}} </h3>
-                <br>
-      @endforeach
-    @endforeach
+     @foreach ($orders as $pedido)
+    <form action="{{route("order")}}" method="post">
+        @csrf
+        <label for="name">Name:</label>   
+        <input type="text" name="name" value="{{$pedido['name']}}" readonly >
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{$pedido['price']}}" readonly>
+        <label for="qtd">Quantidade:</label>
+        <input type="text" name="qtd" value= "{{$pedido['qtd']}}" readonly>
+        <label for="total">Total: </label>
+        <input type="text" name="total" value="{{(float)$pedido['price'] * (float)$pedido['qtd']}}" readonly>
+        <button type="submit">Confirm purchase</button>
+    </form>
+    <br>
+@endforeach
+
+
+
     
 </body>
 </html>

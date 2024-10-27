@@ -22,4 +22,9 @@ class Pizza extends Model
     {
         return $this->belongsToMany(Order::class);
     }
+
+    public function confirmed_order(): BelongsToMany
+    {
+        return $this->belongsToMany(Confirmed_Order::class);
+    }
 }
