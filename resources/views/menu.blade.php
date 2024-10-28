@@ -12,10 +12,10 @@
 @foreach ($pizzas as $pizza)
     <form method="post" action="{{route('menu')}}">
         @csrf
-        <input class="id" name="id" type="number" value="{{$id}}" readonly >
-        <input type="text" class="name">{{$pizza->name}}</input>
-        <input type="text" class="price">{{$pizza->price}}</input>
-        <input type="number" class="qtd" name="qtd"   >
+        <input class="id" name="id" type="number"  value="{{$id}}" readonly  >
+        <input type="text" class="name" name="name" value="{{$pizza->name}}" readonly>
+        <input type="text" class="price" name="price" value="{{$pizza->price}}" readonly>
+        <input type="number" class="qtd" name="qtd">
         <button type="submit" class="submit">Order</button>
     </form>
 @endforeach

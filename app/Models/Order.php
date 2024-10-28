@@ -13,7 +13,9 @@ class Order extends Model
 
     protected $fillable = [
         "user_id",
-        "description"
+        "name",
+        "price",
+        "qtd"
     ];
 
     public function pizza(): BelongsToMany

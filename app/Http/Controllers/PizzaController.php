@@ -11,17 +11,19 @@ class PizzaController extends Controller
 {
     public function getpizza(Request $request){
        
+        //  Pizza::create([
+        //      "name" => "calabresa",
+        //      "ingredients"=> "calabresa,mussarela,orégano,tomate",
+        //      "price" => 18,50
+        //  ]);
+       
         $id = Auth::id();
         $pizzas = Pizza::all();
-        if($id != null){
-            return view("menu", [
+        return view("menu", [
             "pizzas" => $pizzas,
             "session" => null,
             "id" => $id
         ]);
-        }else{
-            @dump($id);
-        }
         
     }
 
@@ -30,16 +32,18 @@ class PizzaController extends Controller
            $name = $request->input("name");
            $price = $request->input("price");
            $qtd = $request->input("qtd");
-           $description = "$name.''.$price.''.$qtd";
-           if ($id == Auth::id()){
+           if ($id == Auth::id() & $id !== null){
                 Order::create([
                     "user_id" => $id,
-                    "description" => $description,
+                    "name" => $name,
+                    "price" =>  $price,
+                    "qtd" => $qtd
 
                 ]);
+                
                 return redirect()->route("menu") ;
            }else{
-             @dump($id);
+             print_r($id);
            }
            
     }

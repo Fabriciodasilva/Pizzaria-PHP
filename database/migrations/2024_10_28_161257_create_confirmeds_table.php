@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('confirmed_orders', function (Blueprint $table) {
+        Schema::create('confirmeds', function (Blueprint $table) {
             $table->id();
+            $table->integer("confirmed_id");
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string("description");
+            $table->string("name");
+            $table->float("price");
+            $table->integer("qtd");
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('confirmeds');
     }
 };

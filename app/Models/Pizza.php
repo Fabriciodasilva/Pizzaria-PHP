@@ -25,6 +25,6 @@ class Pizza extends Model
 
     public function confirmed_order(): BelongsToMany
     {
-        return $this->belongsToMany(Confirmed_Order::class);
+        return $this->belongsToMany(confirmed::class);
     }
 }

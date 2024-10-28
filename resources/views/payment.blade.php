@@ -11,6 +11,8 @@
      @foreach ($orders as $pedido)
     <form action="{{route("order")}}" method="post">
         @csrf
+        <input type="number" name="user_id" value="{{$pedido['user_id']}}" readonly>
+        <input type="number" name="id" value="{{$pedido['id']}}" readonly>
         <label for="name">Name:</label>   
         <input type="text" name="name" value="{{$pedido['name']}}" readonly >
         <label for="price">Price:</label>
@@ -22,8 +24,8 @@
         <button type="submit">Confirm purchase</button>
     </form>
     <br>
-@endforeach
 
+@endforeach
 
 
     
