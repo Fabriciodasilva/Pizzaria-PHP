@@ -1,0 +1,149 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.section1 {
+    background-image: url("/background-01.jpg");
+    height: 100dvh;
+    width: 100dvw;
+    background-size: 110% 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 5rem;
+    font-weight: lighter;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.text1 {
+    margin-top: 10%;
+    width: 20dvw;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign {
+    margin-top: 2%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+
+.sign button {
+    background-color: rgba(40, 69, 25, 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 5rem;
+    height: 3rem;
+}
+
+.section2 h2 {
+    text-align: center;
+    background-color: rgba(40, 69, 25, 100%);
+    color: white;
+    position: relative;
+    top: 5%;
+    font-size: 2rem;
+}
+
+.content {
+    height: 30dvh;
+    background-color: rgba(40, 69, 25, 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.text {
+    width: 20%;
+    font-size: 1.5rem;
+}
+
+.img2 {
+    height: 70%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+.section3 {
+    height: 60dvh;
+    background-color: rgba(27, 28, 29, 100%);
+}
+
+.section3 h2 {
+    background-color: rgba(27, 28, 29, 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 5%;
+    font-size: 2rem;
+}
+
+.section3-content {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(27, 28, 29, 100%);
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img3 {
+    height: 50%;
+    width: 30%;
+}
+
+.section3-text {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section3-text div {
+    font-size: 1.5rem;
+}
+
+button {
+    background-color: rgba(40, 69, 25, 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 5rem;
+    height: 3rem;
+}

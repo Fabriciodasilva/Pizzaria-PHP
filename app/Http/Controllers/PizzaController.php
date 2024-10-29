@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PizzaController extends Controller
 {
@@ -19,6 +20,7 @@ class PizzaController extends Controller
        
         $id = Auth::id();
         $pizzas = Pizza::all();
+        error_log('Some message here.');
         return view("menu", [
             "pizzas" => $pizzas,
             "session" => null,
