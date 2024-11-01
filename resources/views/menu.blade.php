@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    @vite("resources/css/menu.css")
 </head>
 
 <body>
-<h1>Menu de Pizzas</h1>
-
-<a href="{{route('payment')}}"><h2>Payment</h2></a>
-@foreach ($pizzas as $pizza)
-    <form method="post" action="{{route('menu')}}">
-        @csrf
-        <input class="id" name="id" type="number"  value="{{$id}}" readonly  >
-        <input type="text" class="name" name="name" value="{{$pizza->name}}" readonly>
-        <input type="text" class="price" name="price" value="{{$pizza->price}}" readonly>
-        <input type="number" class="qtd" name="qtd">
-        <button type="submit" class="submit">Order</button>
-    </form>
-@endforeach
+<h1>Pizzas in all flavors!!!</h1>
+<a href="{{route('payment')}}"><h2>Payments</h2></a>
+<div class="menu">
+    @foreach ($pizzas as $pizza)
+            <div class="card">
+                <div class="pizza-img">
+                    <img src="" alt="pizza-img" />
+                </div>
+                <div class="pizza-info">
+                    <form action="{{route('menu')}}" method="POST">
+                        @csrf
+                        <h5><input class="id" name="id" type="number"  value="{{$id}}" readonly ></h5>
+                        <h5><input type="text" class="name" name="name" value="{{$pizza->name}}" readonly></h5>
+                        <h6> <input type="text" class="price" name="price" value="{{$pizza->price}}" readonly></h6>
+                        <h5><input type="number" class="qtd" name="qtd"></h5>
+                        <button type="submit" class="submit">Order</button>
+                    </form>
+                </div>
+            </div>
+    
+    @endforeach
+</div>
 @if (session()->has('success'))
      <h3>{{session('success')}}</h3>
 @endif

@@ -1,0 +1,85 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(27, 28, 29, 100%);
+}
+
+h1 {
+    background-color: rgb(27, 28, 29, 100%);
+    color: white;
+    text-align: center;
+}
+
+.order {
+    height: 100dvh;
+    background-color: rgb(27, 28, 29, 100%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.order-card {
+    width: 15%;
+    height: 20%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-areas:
+        "one one five "
+        "four three two"
+        "four three six"
+        "seven seven seven";
+    background-color: rgba(40, 69, 25, 100%);
+    color: white;
+}
+
+.order-id {
+    grid-area: one;
+    text-align: center;
+}
+
+.order-img {
+    grid-area: four;
+    text-align: center;
+    align-self: center;
+}
+
+.order-name {
+    grid-area: three;
+    text-align: center;
+    align-self: center;
+}
+
+.order-status {
+    grid-area: five;
+}
+
+.order-price {
+    grid-area: two;
+    align-self: flex-end;
+    text-align: end;
+}
+
+.order-qtd {
+    grid-area: six;
+    text-align: end;
+}
+
+.total {
+    grid-area: seven;
+    text-align: end;
+}
+
+.order-details {
+    text-align: center;
+    background-color: rgb(20, 44, 7, 100%);
+    color: white;
+    margin-left: 100%;
+    width: 80%;
+    font-size: 1rem;
+}
